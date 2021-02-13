@@ -7,24 +7,73 @@
     android:orientation="vertical"
     tools:context=".view.MainActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imgViewCover"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/banner"
-        android:scaleType="fitXY" />
+        android:background="@drawable/banner"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:lineSpacingExtra="10sp"
+            android:paddingLeft="30dp"
+            android:text="@string/homepage_title"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_sub_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="10sp"
+            android:paddingLeft="30dp"
+            android:text="@string/homepage_slogan"
+            android:textColor="@color/white"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/tv_discover_world"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:lineSpacingExtra="5sp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:gravity="center"
+            android:text="@string/discover_the_world"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_memories_online"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="10sp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="30dp"
+            android:gravity="center"
+            android:text="@string/best_memories_online"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/progress_circular_movie_article"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/my_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp" />
 
 
 </LinearLayout>
