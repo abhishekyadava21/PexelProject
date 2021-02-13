@@ -29,6 +29,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="24dp"
+                android:src="@drawable/profiles"
                 android:layout_marginLeft="10dp"
                 android:background="@drawable/bg_display_pic"
                 android:padding="2dp"

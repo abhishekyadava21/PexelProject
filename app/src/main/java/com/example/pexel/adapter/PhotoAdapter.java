@@ -45,9 +45,6 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> 
                 .load(article.getSrc().getOriginal())
                 .placeholder(R.drawable.ic_launcher_background)
                 .into(viewHolder.imgViewCover);
-        Glide.with(context)
-                .load(article.getPhotographerUrl())
-                .into(viewHolder.imgProfileCover);
     }
 
     @Override
