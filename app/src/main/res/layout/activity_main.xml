@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="350dp"
         android:background="@drawable/banner"
         android:orientation="vertical">
 
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:lineSpacingExtra="10sp"
-            android:paddingLeft="30dp"
+            android:paddingLeft="25dp"
             android:text="@string/homepage_title"
             android:textColor="@color/white"
             android:textSize="22sp"
@@ -60,6 +60,18 @@
             android:text="@string/best_memories_online"
             android:textColor="@color/white"
             android:textSize="16sp" />
+
+
+        <SearchView
+            android:id="@+id/search"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:queryHint="@string/search_photos"
+            android:background="@color/white"
+            android:iconifiedByDefault="false">
+            <requestFocus />
+        </SearchView>
 
     </LinearLayout>
 
