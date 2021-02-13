@@ -65,11 +65,12 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
         });
     }
 
+
     @Override
-    public void onItemClicked(int position) {
+    public void onItemClicked(ArrayList<Photos> photoList, int position) {
         Intent intent = new Intent(MainActivity.this,DetailScreenActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable(AppConstant.DATA,photos.get(position).getPhotographer());
+        bundle.putSerializable(AppConstant.DATA,photoList.get(position).getPhotographer());
         intent.putExtras(bundle);
         startActivity(intent);
     }
