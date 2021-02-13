@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -30,7 +31,7 @@ public class DetailScreenActivity extends AppCompatActivity {
                 .into(imgViewCover);
 
         setTitle(toolBarTitle);
-
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
     }
 
     @Override
