@@ -12,17 +12,17 @@ import com.example.pexel.response.PhotoResponse;
 
 public class PhotoViewModel extends AndroidViewModel {
 
-    private PhotoRepository articleRepository;
-    private LiveData<PhotoResponse> articleResponseLiveData;
+    private PhotoRepository photoRepository;
+    private LiveData<PhotoResponse> responseLiveData;
 
     public PhotoViewModel(@NonNull Application application) {
         super(application);
 
-        articleRepository = new PhotoRepository();
-        this.articleResponseLiveData = articleRepository.getPexelPhotos();
+        photoRepository = new PhotoRepository();
+        this.responseLiveData = photoRepository.getPexelPhotos();
     }
 
     public LiveData<PhotoResponse> getArticleResponseLiveData() {
-        return articleResponseLiveData;
+        return responseLiveData;
     }
 }

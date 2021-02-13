@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
     private LinearLayoutManager layoutManager;
     private PhotoAdapter adapter;
     private ArrayList<Photos> photo = new ArrayList<>();
-    ArrayList<Photos> photos;
-    PhotoViewModel articleViewModel;
+    private OnItemClick itemClick;
+    PhotoViewModel viewModel;
 
 
     @Override
@@ -48,13 +48,13 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
         layoutManager = new LinearLayoutManager(MainActivity.this);
         my_recycler_view.setLayoutManager(layoutManager);
         my_recycler_view.setHasFixedSize(true);
-        adapter = new PhotoAdapter(MainActivity.this, photo);
+        adapter = new PhotoAdapter(MainActivity.this, photo, itemClick);
         my_recycler_view.setAdapter(adapter);
-        articleViewModel = ViewModelProviders.of(this).get(PhotoViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(PhotoViewModel.class);
     }
 
     private void getPexelPhotos() {
-        articleViewModel.getArticleResponseLiveData().observe(this, articleResponse -> {
+        viewModel.getArticleResponseLiveData().observe(this, articleResponse -> {
             if (articleResponse != null) {
 
                 progressBar.setVisibility(View.GONE);
@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
 
     @Override
     public void onItemClicked(ArrayList<Photos> photoList, int position) {
-        Intent intent = new Intent(MainActivity.this,DetailScreenActivity.class);
+        Intent intent = new Intent(MainActivity.this, DetailScreenActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable(AppConstant.DATA,photoList.get(position).getPhotographer());
+        bundle.putSerializable(AppConstant.DATA, photoList.get(position).getPhotographer());
         intent.putExtras(bundle);
         startActivity(intent);
     }
